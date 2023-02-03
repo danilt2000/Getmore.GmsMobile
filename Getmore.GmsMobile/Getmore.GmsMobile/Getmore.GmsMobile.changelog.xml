@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://getmore.blob.core.windows.net/xmlschemas/changelog.xsd">
+	<ProductName>Getmore.GmsMobile</ProductName>
+
+	<ChangeLogItems>
+
+		<ChangeLogItem>
+			<Version>0.1.0.0</Version>
+			<ChangeDate>2022-05-25</ChangeDate>
+			<AuthorCode>VK</AuthorCode>
+			<TechnicalDescription>
+				<string>Initial version</string>
+			</TechnicalDescription>
+			<LinkedGmRequests>
+				<int>7738</int>
+			</LinkedGmRequests>
+			<Released>false</Released>
+		</ChangeLogItem>
+
+	</ChangeLogItems>
+	
+</ChangeLog>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:gmsmobile="clr-namespace:Getmore.GmsMobile"
+	     x:Class="Getmore.GmsMobile.MainPage"
+	       xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+
+	<StackLayout>
+		<FlexLayout>
+			<Button Text="Back" Clicked="BtnBack_Clicked" Padding="10"></Button>
+			<Button Text="Home" Clicked="BtnHome_Clicked" Padding="10"></Button>
+			<Button Text="Reload" Clicked="BtnReload_Clicked" Padding="10"></Button>
+			<Button Text="QR code scanner" Clicked="BtnQrCodeScanner_Clicked" Padding="10"></Button>
+		</FlexLayout>
+		<gmsmobile:GmsMobileWebView x:Name="GmsAppWebView" WidthRequest="1000" HeightRequest="1000"></gmsmobile:GmsMobileWebView>
+	</StackLayout>
+
+</ContentPage>
