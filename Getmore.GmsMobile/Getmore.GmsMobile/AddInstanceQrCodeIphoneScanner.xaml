@@ -1,16 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<zxing:ZXingScannerPage  xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Getmore.GmsMobile.AddInstanceQrCodeIphoneScanner"
-	     xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
-			 Title="Full screen"
-			 OnScanResult="Handle_OnScanResult"
-			 IsScanning="true">
-    <!--<ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>-->
-</zxing:ZXingScannerPage>
+	     xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Button Grid.Row="0" Clicked="Button_Clicked" ></Button>
+		
+		<zxing:ZXingScannerView Grid.Row="1"
+					x:Name="_scanView"
+					OnScanResult="Handle_OnScanResult"
+					IsScanning="true"
+					WidthRequest="600"
+					HeightRequest="600" />
+		<BoxView Grid.Row="2"
+			 BackgroundColor="Blue" />
+	</Grid>
+</ContentPage>
