@@ -115,7 +115,7 @@ namespace Getmore.GmsMobile
 
 		private void ShowQrCodeLoginScreen()
 		{
-			var page = new AddInstanceQrCodeScanner();
+			var page = new AddInstanceQrCodeIphoneScanner();
 			_ = this.Navigation.PushModalAsync(page);
 			page.Disappearing += this.QrCodeScanClosed;
 		}

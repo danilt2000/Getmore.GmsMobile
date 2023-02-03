@@ -54,6 +54,7 @@ namespace Getmore.GmsMobile
 
 		private void QrCodeScanner_OnScanResult(ZXing.Result result)
 		{
+
 			var resultArr = result.Text.Split('|');
 			this.MyResult = new GmsInstanceLoginData(resultArr[0], resultArr[1], null, resultArr[2]);
 			this.QrCodeScanner.IsAnalyzing = false;
