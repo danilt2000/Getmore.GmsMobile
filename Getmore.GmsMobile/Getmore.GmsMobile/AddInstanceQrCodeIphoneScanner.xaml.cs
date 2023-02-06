@@ -17,7 +17,16 @@ namespace Getmore.GmsMobile
 		public AddInstanceQrCodeIphoneScanner()
 		{
 			InitializeComponent();
+
 		}
+
+		protected override void OnAppearing()
+		{
+
+
+
+		}
+
 		public void Handle_OnScanResult(Result result)
 		{
 			Device.BeginInvokeOnMainThread(async () =>

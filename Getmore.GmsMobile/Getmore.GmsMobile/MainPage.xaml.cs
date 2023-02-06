@@ -53,10 +53,18 @@ namespace Getmore.GmsMobile
 
 			var instances = this.DataAccess.GetGmsInstances();
 
-			if (instances.Count > 0)
-				this.LoginToGmsInstance(instances.First());
-			else
-				this.ShowQrCodeLoginScreen();
+			GmsInstanceLoginData loginData = new GmsInstanceLoginData
+			{
+				GmsInstanceUrl = "https://demo.gmcloud.cz/Demo/",
+				AccessTokenHex = "03FFA7048572C49A6B112524AEFEB78FB1493D6E4D4EA5AD3A33C20DFAB0EC6AC1551D451D332C17D20CB067CBE4419F7B121A2E0CA039CA5DDA52B64605214DAB51724AA44261E2AAF6F1A2E13EC002A24C53963CB2D5950A8E2E0A15420BF8109B40F15C557CBD411710C3B575FEC6B2DB0BF8418C94B91E3191B06032B8BE8D6DB95884E27BE836F7138648814EF71AF080F157856AA9D408162C88C3F729BDF670DB6ABA59B06252BBB22A178C5A13FE9E21A054FEFFE7E63934A8708E44F176394A9A1CCE61",
+				UserLogin = "TpmManazer",
+				UserPassword = null
+			};
+
+			//if (instances.Count > 0)
+				this.LoginToGmsInstance(loginData);
+			//else
+				//this.ShowQrCodeLoginScreen();
 		}
 
 		#region event handlers
@@ -107,7 +115,7 @@ namespace Getmore.GmsMobile
 					this.LoginToGmsInstance(newInstance);
 				}
 			}
-		} 
+		}
 
 		#endregion
 
@@ -179,7 +187,7 @@ namespace Getmore.GmsMobile
 		{
 			get;
 			set;
-		} 
+		}
 
 		#endregion
 	}

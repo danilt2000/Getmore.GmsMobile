@@ -53,6 +53,10 @@ namespace Getmore.GmsMobile.iOS
 				case SendMessageToMobileApp:
 					var messageBody = message.Body.ToString();
 					var arr = messageBody.Split("###~###");
+
+					if (!String.IsNullOrWhiteSpace(arr[1]) && arr[1].ToLowerInvariant() == "null")
+						arr[1] = null;
+
 					webView.InvokeIncommingMessageAction(arr[0], arr[1]);
 					break;
 			}
