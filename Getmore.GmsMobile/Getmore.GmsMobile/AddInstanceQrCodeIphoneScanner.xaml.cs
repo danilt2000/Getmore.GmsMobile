@@ -16,14 +16,18 @@ namespace Getmore.GmsMobile
 	{
 		public AddInstanceQrCodeIphoneScanner()
 		{
-			InitializeComponent();
-
+			this.InitializeComponent();
+			this.QrCodeScanner.IsScanning = true;
+			this.QrCodeScanner.IsAnalyzing = true;
 		}
 
 		protected override void OnAppearing()
 		{
-
-
+			if (this.QrCodeScanner.IsScanning == false || this.QrCodeScanner.IsAnalyzing == false)
+			{
+				this.QrCodeScanner.IsScanning = true;
+				this.QrCodeScanner.IsAnalyzing = true;
+			}
 
 		}
 
@@ -32,6 +36,10 @@ namespace Getmore.GmsMobile
 			Device.BeginInvokeOnMainThread(async () =>
 			{
 				await DisplayAlert("Scanned result", result.Text, "OK");
+
+				this.QrCodeScanner.IsAnalyzing = false;
+				this.QrCodeScanner.IsScanning = false;
+
 				//this.MyResult = new GmsInstanceLoginData(resultArr[0], resultArr[1], null, resultArr[2]);
 
 				_ = this.Navigation.PopModalAsync();
